@@ -1,4 +1,4 @@
-package com.globits.da.dto.MyFirstApiDto;
+package com.globits.da.dto;
 
 public class MyFirstApiDto {
     private String code;

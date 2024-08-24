@@ -1,30 +1,31 @@
-package com.globits.da.domain;
+package com.globits.da.dto;
 
-import com.globits.core.domain.BaseObject;
+import com.globits.core.dto.BaseObjectDto;
+import com.globits.da.domain.Employee;
 
-import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@Entity
-@Table(name = "tbl_employee")
-@XmlRootElement
-public class Employee extends BaseObject {
-    private static final long serialVersionUID = 1L;
-
-    @Column(name = "code")
+public class EmployeeDto extends BaseObjectDto {
     private String code;
-
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "email")
     private String email;
-
-    @Column(name = "phone")
     private String phone;
-
-    @Column(name = "age")
     private Integer age;
+
+
+    public EmployeeDto() {
+        super();
+    }
+
+    public EmployeeDto(Employee entity) {
+        if(entity != null) {
+            this.setId(entity.getId());
+            this.code = entity.getCode();
+            this.name = entity.getName();
+            this.email = entity.getEmail();
+            this.phone = entity.getPhone();
+            this.age = entity.getAge();
+        }
+    }
+
 
     public String getCode() {
         return code;

@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.List;
 import java.util.UUID;
 
-import com.globits.da.dto.MyFirstApiDto.MyFirstApiDto;
+import com.globits.da.dto.MyFirstApiDto;
 import com.globits.da.service.MyFirstApiService;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -26,8 +26,6 @@ import com.globits.da.dto.CategoryDto;
 import com.globits.da.dto.search.SearchDto;
 import com.globits.da.service.CategoryService;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/api/category")
