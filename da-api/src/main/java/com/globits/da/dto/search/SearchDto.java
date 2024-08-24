@@ -82,6 +82,5 @@ public class SearchDto {
 	public void setToDate(Date toDate) {
 		this.toDate = toDate;
 	}
-	
-	
+
 }
