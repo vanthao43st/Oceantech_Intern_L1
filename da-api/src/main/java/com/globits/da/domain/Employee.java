@@ -1,15 +1,15 @@
 package com.globits.da.domain;
 
-import com.globits.core.domain.BaseObject;
-
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "tbl_employee")
 @XmlRootElement
-public class Employee extends BaseObject {
-    private static final long serialVersionUID = 1L;
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
     @Column(name = "code")
     private String code;
@@ -25,6 +25,14 @@ public class Employee extends BaseObject {
 
     @Column(name = "age")
     private Integer age;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getCode() {
         return code;

@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.UUID;
 
 public class EmployeeSearchDto {
-    private UUID id;
+    private int id;
     private int pageIndex;
     private int pageSize;
     private String keyword;
@@ -16,11 +16,11 @@ public class EmployeeSearchDto {
     private Date fromDate;
     private Date toDate;
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 

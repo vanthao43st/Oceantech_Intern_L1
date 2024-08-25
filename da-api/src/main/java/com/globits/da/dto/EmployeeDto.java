@@ -1,23 +1,29 @@
 package com.globits.da.dto;
 
-import com.globits.core.dto.BaseObjectDto;
 import com.globits.da.domain.Employee;
 
-public class EmployeeDto extends BaseObjectDto {
+public class EmployeeDto {
+    private Integer id;
     private String code;
     private String name;
     private String email;
     private String phone;
     private Integer age;
 
+    public EmployeeDto() {}
 
-    public EmployeeDto() {
-        super();
+    public EmployeeDto(Integer id, String code, String name, String email, String phone, Integer age) {
+        this.id = id;
+        this.code = code;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.age = age;
     }
 
     public EmployeeDto(Employee entity) {
         if(entity != null) {
-            this.setId(entity.getId());
+            this.id = entity.getId();
             this.code = entity.getCode();
             this.name = entity.getName();
             this.email = entity.getEmail();
@@ -26,6 +32,13 @@ public class EmployeeDto extends BaseObjectDto {
         }
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getCode() {
         return code;
