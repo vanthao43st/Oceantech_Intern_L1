@@ -1,29 +1,31 @@
 package com.globits.da.domain;
 
+import com.globits.core.auditing.AuditableEntity;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "tbl_employee")
 @XmlRootElement
-public class Employee {
+public class Employee extends AuditableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
-    @Column(name = "code")
+    @Column(name = "code", unique = true, nullable = false)
     private String code;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false)
     private String phone;
 
-    @Column(name = "age")
+    @Column(name = "age", nullable = false)
     private Integer age;
 
     public Integer getId() {

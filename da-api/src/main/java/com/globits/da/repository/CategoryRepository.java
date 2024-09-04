@@ -16,6 +16,7 @@ import com.globits.da.dto.CategoryDto;
 public interface CategoryRepository extends JpaRepository<Category, UUID>{
 	@Query("select count(entity.id) from Category entity where entity.code =?1 and (entity.id <> ?2 or ?2 is null) ")
 	Long checkCode(String code, UUID id);
+
 	@Query("select new com.globits.da.dto.CategoryDto(ed) from Category ed")
 	Page<CategoryDto> getListPage( Pageable pageable);
 	

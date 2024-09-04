@@ -1,8 +1,9 @@
 package com.globits.da.dto;
 
+import com.globits.core.dto.AuditableEntityDto;
 import com.globits.da.domain.Employee;
 
-public class EmployeeDto {
+public class EmployeeDto extends AuditableEntityDto {
     private Integer id;
     private String code;
     private String name;
@@ -10,9 +11,12 @@ public class EmployeeDto {
     private String phone;
     private Integer age;
 
-    public EmployeeDto() {}
+    public EmployeeDto() {
+        super();
+    }
 
     public EmployeeDto(Integer id, String code, String name, String email, String phone, Integer age) {
+        super();
         this.id = id;
         this.code = code;
         this.name = name;

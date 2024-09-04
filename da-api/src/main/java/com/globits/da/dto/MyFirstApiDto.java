@@ -3,7 +3,7 @@ package com.globits.da.dto;
 public class MyFirstApiDto {
     private String code;
     private String name;
-    private Integer age;
+    private int age;
 
     public String getCode() {
         return code;
@@ -21,11 +21,11 @@ public class MyFirstApiDto {
         this.name = name;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 }
